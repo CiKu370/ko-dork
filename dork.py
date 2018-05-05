@@ -22,7 +22,7 @@ else:
 	G = ""
 	glp = ""
 
-filename = ("ko-vuln")
+filename = ("ko-vuln.txt")
 vuln = open(filename,"a")
 finallist = []
 
@@ -138,7 +138,7 @@ def cek():
 			vuln.write(x+"\n")
 		vuln.close()
 
-		print (B+"\r[+] "+G+"successfully saved in "+W+filename+".txt")
+		print (B+"\r[+] "+G+"successfully saved in "+W+filename)
 
         print (B+"\r[*] "+G+"Total web vuln "+W+": %s "%(len(hasil)))
 	print (W+43*'-'+'\n')
