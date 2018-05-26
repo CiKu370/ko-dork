@@ -1,11 +1,11 @@
 import urllib2 , cookielib , random , re , sys , socket , time , httplib , ssl
 
-       ##################################################
-       # Author : CiKu ~ Debby Anggraini a.k.a Xnver404 #
-       # Team   : Blackhole Security                    #
-       # Date   : 2 - 5 - 2018                          #
-       # Github : https://github.com/ciku370            #
-       ##################################################
+       #########################################
+       # Author : Debby anggraini ( @ciku370 ) #
+       # Team   : Blackhole Security           #
+       # Date   : 2 - 5 - 2018                 #
+       # Github : https://github.com/ciku370   #
+       #########################################
 
 if sys.platform == "linux2" or sys.platform == "linux":
 	R = ("\033[31m")
@@ -22,7 +22,7 @@ else:
 	G = ""
 	glp = ""
 
-filename = ("ko-vuln.txt")
+filename = ("vuln.txt")
 vuln = open(filename,"a")
 finallist = []
 
@@ -118,13 +118,6 @@ def cek():
 					hasil.append(host.replace("'",""))
 				else:
 					pass
-
-		except urllib2.URLError:
-			pass
-		except socket.error:
-			pass
-		except ssl.CertificateError:
-			pass
 		except:
 			pass
 
@@ -212,7 +205,10 @@ def cari(inurl , site , maxc):
 
     print ("\n"+W+43*"-")
     print (B+"[+] "+G+"Urls (sorted) "+W+": %s Url" % (len(finallist)))
-    print (B+"[+] "+G+"Site          "+W+": %s"%(site))
+    if site == '':
+	    print (B+"[+] "+G+"Site          "+W+": random")
+    else:
+	    print (B+"[+] "+G+"Site          "+W+": %s"%(site))
     return finallist
 
 if __name__ == "__main__":
@@ -224,9 +220,6 @@ if __name__ == "__main__":
 
 	inurl = raw_input(B+"[?]"+G+" Inurl    "+W+": ")
 	site  = raw_input(B+"[?]"+G+" Site     "+W+": ")
-	if site == "":
-		site  = random.choice(sites)
-
 	maxc  = raw_input(B+"[?]"+G+" Max Page "+W+": ")
 
 	print (43*"-")
